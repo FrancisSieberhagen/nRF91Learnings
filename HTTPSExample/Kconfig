@@ -1,0 +1,20 @@
+source "Kconfig.zephyr"
+
+menu "Application"
+config SERVER_HOST
+        string "Server Host"
+        default ""
+
+config SERVER_PORT
+        int "Server port"
+        default "42501"
+
+config TLS_ENABLED
+        bool "Enable TLS"
+        default y
+
+module = TEST1
+module-str = test
+source "${ZEPHYR_BASE}/subsys/logging/Kconfig.template.log_config"
+
+endmenu
